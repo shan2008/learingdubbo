@@ -1,5 +1,6 @@
 package com.alibaba.dubbo.demo.provider;
 
+import com.alibaba.dubbo.demo.DemoService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,6 +11,10 @@ public class Provider {
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"META-INF/spring/dubbo-demo-provider.xml"});
         context.start();
+
+        DemoService demoService = (DemoService) context.getBean("demoService"); // 获取远程服务代理
+
+        //    HighStudent student = (HighStudent)ExtensionLoader.getExtensionLoader(Student.class).getExtension("high");
 
         System.in.read(); // 按任意键退出
     }

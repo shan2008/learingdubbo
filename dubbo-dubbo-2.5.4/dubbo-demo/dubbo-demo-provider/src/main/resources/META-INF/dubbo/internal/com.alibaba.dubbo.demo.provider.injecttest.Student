@@ -1,0 +1,2 @@
+high=com.alibaba.dubbo.demo.provider.injecttest.HighStudent
+junior=com.alibaba.dubbo.demo.provider.injecttest.JuniorStudent

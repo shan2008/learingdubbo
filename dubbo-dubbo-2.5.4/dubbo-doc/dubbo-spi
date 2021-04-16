@@ -23,6 +23,8 @@ dubbo在原来的基础上设计了以下功能
   例如 ExtensionLoader.getExtensionLoader(Protocol.class).getExtension(spi的key)来提取对象
 4.原始JDK spi不支持 AOP功能，dubbo设计增加了AOP功能,在cachedWrapperClasses，在原始spi类，包装了XxxxFilterWrapper XxxxListenerWrapper
 5.原始JDK spi不支持 IOC功能，dubbo设计增加了IOC,通过构造函数注入,代码为：wrapperClass.getConstructor(type).newInstance(instance),
+6.dubbo注入分为两种spi对象，属性也是spi对象注入时：注入的名字要是spi的key,实现类有adaptive注解，或者方法上有adaptive
+如果注入的对象不是spi对象那么属性的名字要在springIOC中有这个属性
 
 
 
